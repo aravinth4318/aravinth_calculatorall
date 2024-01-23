@@ -1,5 +1,7 @@
+import 'package:calculator/shimmer.dart';
 import 'package:flutter/material.dart';
 
+import 'bottomnavigationcalculator.dart';
 import 'calcu.dart';
 import 'maximumfunction.dart';
 
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:   maximumfunction(),
+      home:   shimm(),
     );
   }
 }

@@ -95,35 +95,37 @@ List addlist = [];
                   fontSize: 25),
               ),
           ),
-          
-          
-          ///container in side show the only textformfield value
-          
-          
-          Container(
-            height: 300,
-            width:  400,
 
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.black,
-                width: 2,
+
+          ///container in side show the only textformfield value
+
+
+          SingleChildScrollView(
+            child: Container(
+              height: 300,
+              width:  400,
+            
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.black,
+                  width: 2,
+                ),
               ),
-            ),
-            child: ListView.builder(
-              itemCount: addlist.length,
-                itemBuilder: (
-                    BuildContext context, index){
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Text(addlist[index].toString(),
-                      style: TextStyle(fontSize: 25,
-                      color: Colors.black),
-                      ),
-                    ],
-                  );
-                }
+              child: ListView.builder(
+                itemCount: addlist.length,
+                  itemBuilder: (
+                      BuildContext context, index){
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Text(addlist[index].toString(),
+                        style: TextStyle(fontSize: 25,
+                        color: Colors.black),
+                        ),
+                      ],
+                    );
+                  }
+              ),
             ),
           ),
 
@@ -257,6 +259,249 @@ List addlist = [];
               ),
             ],
           ),
+
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+
+              /// lessthan 5 number value button
+
+              ElevatedButton(
+                onPressed: (){
+                  setState(() {
+
+                    var filtered1 = addlist.where((e) => double.parse(e) < 5).toList();
+                    var b = filtered1.toString();
+
+
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Container(
+                            height: 300,
+                            width:  400,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text("Less Than 5: ${b}",
+                                  style: TextStyle(
+                                      fontSize: 30
+                                  ),
+                                ),
+                                ElevatedButton(
+                                  onPressed: (){
+                                    Navigator.pop(context);
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    backgroundColor: Colors.white,
+                                  ),
+                                  child: Text("Ok",
+                                    style: TextStyle(
+                                        color: Colors.green,
+                                        fontSize: 30),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        });
+
+                  });
+                },
+
+                child: Text("Less 5",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 25),
+                ),
+              ),
+
+              ///length of value button
+
+              ElevatedButton(
+                onPressed: (){
+                  setState(() {
+                    addlist.sort();
+                    addlist.sort((a,b) => int.parse(a).compareTo(int.parse(b)));
+                  });
+                  showModalBottomSheet(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Container(
+                          height: 300,
+                          width:  400,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text("High: ${addlist.length}",
+                                style: TextStyle(
+                                    fontSize: 30
+                                ),
+                              ),
+                              ElevatedButton(
+                                onPressed: (){
+                                  Navigator.pop(context);
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  backgroundColor: Colors.white,
+                                ),
+                                child: Text("Ok",
+                                  style: TextStyle(
+                                      color: Colors.green,
+                                      fontSize: 30),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      });
+                },
+
+                child: Text("Length",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 25),
+                ),
+              ),
+
+
+
+            ],
+          ),
+
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //   children: [
+          //
+          //     ///even number value button
+          //
+          //     ElevatedButton(
+          //       onPressed: () {
+          //         setState(() {
+          //           // Assuming 'numbers' is a list of integers
+          //           List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+          //
+          //           // Filter even numbers
+          //           List<int> evenNumbersList = numbers.where((number) => number % 2 == 0).toList();
+          //
+          //           showModalBottomSheet(
+          //             context: context,
+          //             builder: (BuildContext context) {
+          //               return Container(
+          //                 height: 300,
+          //                 width: 400,
+          //                 child: Column(
+          //                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //                   children: [
+          //                     Text(
+          //                       "Even Num: ${evenNumbersList.join(', ')}",
+          //                       style: TextStyle(
+          //                         fontSize: 30,
+          //                       ),
+          //                     ),
+          //                     ElevatedButton(
+          //                       onPressed: () {
+          //                         Navigator.pop(context);
+          //                       },
+          //                       style: ElevatedButton.styleFrom(
+          //                         shape: RoundedRectangleBorder(
+          //                           borderRadius: BorderRadius.circular(20),
+          //                         ),
+          //                         backgroundColor: Colors.white,
+          //                       ),
+          //                       child: Text(
+          //                         "Ok",
+          //                         style: TextStyle(
+          //                           color: Colors.green,
+          //                           fontSize: 30,
+          //                         ),
+          //                       ),
+          //                     ),
+          //                   ],
+          //                 ),
+          //               );
+          //             },
+          //           );
+          //         });
+          //       },
+          //       child: Text(
+          //         "Even",
+          //         style: TextStyle(
+          //           color: Colors.black,
+          //           fontSize: 25,
+          //         ),
+          //       ),
+          //     ),
+          //
+          //
+          //     ///odd number value button
+          //
+          //     ElevatedButton(
+          //       onPressed: () {
+          //         setState(() {
+          //           // Assuming 'numbers' is a list of integers
+          //           List<int>  addlist= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+          //
+          //           // Filter odd numbers
+          //           List<int> oddNumbersList = addlist.where((addlist) => addlist % 2 == 1).toList();
+          //
+          //           showModalBottomSheet(
+          //             context: context,
+          //             builder: (BuildContext context) {
+          //               return Container(
+          //                 height: 300,
+          //                 width: 400,
+          //                 child: Column(
+          //                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //                   children: [
+          //                     Text(
+          //                       "Odd Num: ${oddNumbersList.join(', ')}",
+          //                       style: TextStyle(
+          //                         fontSize: 30,
+          //                       ),
+          //                     ),
+          //                     ElevatedButton(
+          //                       onPressed: () {
+          //                         Navigator.pop(context);
+          //                       },
+          //                       style: ElevatedButton.styleFrom(
+          //                         shape: RoundedRectangleBorder(
+          //                           borderRadius: BorderRadius.circular(20),
+          //                         ),
+          //                         backgroundColor: Colors.white,
+          //                       ),
+          //                       child: Text(
+          //                         "Ok",
+          //                         style: TextStyle(
+          //                           color: Colors.green,
+          //                           fontSize: 30,
+          //                         ),
+          //                       ),
+          //                     ),
+          //                   ],
+          //                 ),
+          //               );
+          //             },
+          //           );
+          //         });
+          //       },
+          //       child: Text(
+          //         "Odd ",
+          //         style: TextStyle(
+          //           color: Colors.black,
+          //           fontSize: 25,
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // ),
 
         ],
       ),
