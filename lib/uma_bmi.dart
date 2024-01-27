@@ -62,6 +62,7 @@ class _BmiState extends State<Bmi> {
             ),
           ),
           SizedBox(height: 20),
+
           TextFormField(
             controller: height,
             keyboardType: TextInputType.number,
@@ -71,7 +72,9 @@ class _BmiState extends State<Bmi> {
               border: OutlineInputBorder(),
             ),
           ),
+
           SizedBox(height: 20),
+
           ElevatedButton(
             onPressed: () {
               calculateBmi();
