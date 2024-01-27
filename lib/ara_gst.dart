@@ -44,6 +44,7 @@ class _ara_gstState extends State<ara_gst> {
           Padding(
             padding: const EdgeInsets.all(30),
             child: TextFormField(
+              style: TextStyle(fontSize: 25),
               controller: bill,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
@@ -66,6 +67,7 @@ class _ara_gstState extends State<ara_gst> {
           Padding(
             padding: const EdgeInsets.all(30),
             child: TextFormField(
+              style: TextStyle(fontSize: 25),
               controller: gst,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
