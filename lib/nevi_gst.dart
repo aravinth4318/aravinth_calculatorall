@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+
+
 class gstcalc extends StatefulWidget {
   const gstcalc({super.key});
 
@@ -21,7 +24,9 @@ class _gstcalcState extends State<gstcalc> {
       child: Scaffold(
           body: Column(
               children: [
+
                 SizedBox(height: 20,),
+
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
@@ -33,7 +38,9 @@ class _gstcalcState extends State<gstcalc> {
                     keyboardType: TextInputType.number,
                   ),
                 ),
+
                 SizedBox(height: 20,),
+
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
@@ -46,13 +53,15 @@ class _gstcalcState extends State<gstcalc> {
                   ),
                 ),
 
-
                 SizedBox(height: 20,),
-                Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     ElevatedButton(onPressed: (){
                       setState(() {
-                        calcgst=(double.parse(text1.text)*double.parse(text2.text)/100);
+                        calcgst=(double.parse(text1.text)*
+                            double.parse(text2.text)/100);
                         total=double.parse(text1.text)+calcgst;
                         double sgst=calcgst/2;
                         double cgst=calcgst/2;
@@ -77,7 +86,8 @@ class _gstcalcState extends State<gstcalc> {
                               );
                             });
                       });
-                    }, child: Text("Exclusive")),
+                    },
+                        child: Text("Exclusive")),
 
 
                     ElevatedButton(onPressed: (){
@@ -104,7 +114,8 @@ class _gstcalcState extends State<gstcalc> {
                           ),
                         );
                       });
-                    }, child: Text("Inclusive")),
+                    },
+                        child: Text("Inclusive")),
 
                   ],
                 )

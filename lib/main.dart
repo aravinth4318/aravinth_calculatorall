@@ -2,11 +2,13 @@ import 'package:calculator/shimmer.dart';
 import 'package:flutter/material.dart';
 
 import 'ara_bmi.dart';
+import 'ara_gst.dart';
 import 'arul_bmi.dart';
 import 'bottomnavigationcalculator.dart';
 import 'calcu.dart';
 import 'maximumfunction.dart';
 import 'nevi_bmi.dart';
+import 'nevi_gst.dart';
 
 
 void main() {
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:   ara_bmi(),
+      home:   ara_gst(),
     );
   }
 }

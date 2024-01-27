@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ara_bmi.dart';
+import 'ara_gst.dart';
 import 'calcu.dart';
 import 'listfuncation.dart';
 import 'maximumfunction.dart';
@@ -21,8 +23,8 @@ class _calcbottomnaviState extends State<calcbottomnavi> {
     calculator(),
     listfunction(),
     maximumfunction(),
-
-
+    ara_bmi(),
+    ara_gst(),
 
 
   ];
@@ -67,6 +69,29 @@ class _calcbottomnaviState extends State<calcbottomnavi> {
                 color: Colors.black,
                 size: 20,),
               label: "Maximum",
+              backgroundColor: Colors.green,
+            ),
+
+            ///bmi
+
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.money,
+                color: Colors.black,
+                size: 20,),
+              label: "Bmi",
+              backgroundColor: Colors.green,
+            ),
+
+
+            ///gst
+
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.monetization_on_rounded,
+                color: Colors.black,
+                size: 20,),
+              label: "Gst",
               backgroundColor: Colors.green,
             ),
 

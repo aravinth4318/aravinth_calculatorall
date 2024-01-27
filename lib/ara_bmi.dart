@@ -20,9 +20,9 @@ class _ara_bmiState extends State<ara_bmi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: Color(0xff81da5b),
       appBar: AppBar(
-        //backgroundColor: Colors.lightGreenAccent,
+        backgroundColor: Color(0xff81da5b),
         title: Center(
           child: Text("Calculat Your Bmi",
           style: TextStyle(fontSize: 25,
@@ -161,7 +161,7 @@ class _ara_bmiState extends State<ara_bmi> {
                        onPressed: (){
                          Navigator.pop(context);
                        },
-                         child: Text("Ok"),
+                         child: Text("Back"),
                      ),
                    ],
                  ),
@@ -175,11 +175,11 @@ class _ara_bmiState extends State<ara_bmi> {
              shape: RoundedRectangleBorder(
                borderRadius: BorderRadius.circular(10),
              ),
-             backgroundColor: Colors.lightGreenAccent,
+             backgroundColor: Colors.lightBlueAccent,
            ),
              child: Text("Calculat",
              style: TextStyle(
-               fontSize: 25,
+               fontSize: 30,
                color: Colors.black
              ),),
          ),
