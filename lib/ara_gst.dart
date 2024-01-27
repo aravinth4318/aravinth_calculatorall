@@ -52,7 +52,9 @@ class _ara_gstState extends State<ara_gst> {
                 labelStyle: TextStyle(fontSize: 20),
                 prefixIcon: Icon(Icons.attach_money),
                 suffixIcon: IconButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    bill.clear();
+                  },
                   icon: Icon(Icons.clear),
                 )
               ),
@@ -72,7 +74,9 @@ class _ara_gstState extends State<ara_gst> {
                   labelStyle: TextStyle(fontSize: 20),
                   prefixIcon: Icon(Icons.money_off),
                   suffixIcon: IconButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      gst.clear();
+                    },
                     icon: Icon(Icons.clear),
                   )
               ),

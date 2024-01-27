@@ -21,7 +21,6 @@ class _calcbottomnaviState extends State<calcbottomnavi> {
 
   final tabs = [
     calculator(),
-    listfunction(),
     maximumfunction(),
     ara_bmi(),
     ara_gst(),
@@ -47,19 +46,19 @@ class _calcbottomnaviState extends State<calcbottomnavi> {
               icon: Icon(
                 Icons.calculate,
                 color: Colors.black,
-                size: 20,),
+                size: 25,),
               label: "calculator",
-              backgroundColor: Colors.grey,
+              backgroundColor: Colors.teal,
             ),
 
             ///basiclist
 
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.list,color: Colors.black,),
-              label: "basic list",
-              backgroundColor: Colors.lightGreen,
-            ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(
+            //     Icons.list,color: Colors.black,),
+            //   label: "basic list",
+            //   backgroundColor: Colors.lightGreen,
+            // ),
 
             ///maximumfunction
 
@@ -67,7 +66,7 @@ class _calcbottomnaviState extends State<calcbottomnavi> {
               icon: Icon(
                 Icons.maximize,
                 color: Colors.black,
-                size: 20,),
+                size: 25,),
               label: "Maximum",
               backgroundColor: Colors.green,
             ),
@@ -78,9 +77,9 @@ class _calcbottomnaviState extends State<calcbottomnavi> {
               icon: Icon(
                 Icons.money,
                 color: Colors.black,
-                size: 20,),
+                size: 25,),
               label: "Bmi",
-              backgroundColor: Colors.green,
+              backgroundColor: Colors.blueGrey,
             ),
 
 
@@ -90,9 +89,9 @@ class _calcbottomnaviState extends State<calcbottomnavi> {
               icon: Icon(
                 Icons.monetization_on_rounded,
                 color: Colors.black,
-                size: 20,),
+                size: 25,),
               label: "Gst",
-              backgroundColor: Colors.green,
+              backgroundColor: Colors.purpleAccent,
             ),
 
           ],
